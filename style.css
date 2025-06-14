@@ -1,0 +1,311 @@
+/* style.css - extracted from index.html */
+body, html { margin:0; padding:0; font-family:Arial,sans-serif; background-color:#f7f7f7; height:100%; }
+.container { display:flex; height:100vh; }
+.sidebar {
+  width:250px;
+  background:#fff;
+  border-right:1px solid #e0e0e0;
+  padding:20px;
+  box-sizing:border-box;
+  transition:transform 0.3s ease;
+  position:relative;
+}
+.company-name {
+  padding:10px 15px;
+  font-size:18px;
+  font-weight:bold;
+  border-bottom:1px solid #e0e0e0;
+  margin-bottom:10px;
+}
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+.sidebar-collapsed-btn-floating {
+  display: none;
+}
+.menu-item {
+  padding:10px 15px;
+  margin-bottom:10px;
+  border-radius:4px;
+  cursor:pointer;
+  transition:background-color 0.3s;
+}
+.menu-item:hover, .menu-item.active { background-color:#e6e6e6; }
+.menu-toggle {
+  display:none;
+  position:fixed;
+  top:16px;
+  right:16px;
+  font-size:24px;
+  cursor:pointer;
+  z-index:1100;
+}
+.menu-abbrev {
+  display: none;
+  position: fixed;
+  top:16px;
+  left:16px;
+  font-size:23px;
+  font-weight:bold;
+  z-index:1100;
+}
+@media (max-width:768px) {
+  .menu-toggle { display:block; }
+  .sidebar { position:fixed; top:0; left:0; height:100vh; z-index:1000; }
+  .main-content { padding-left:0; }
+}
+.main-content {
+  flex-grow:1;
+  padding:20px;
+  overflow-y:auto;
+  position:relative;
+  min-height:1400px;
+}
+.section { display:none; }
+.homepage {
+  display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
+  height:100%; background:#fff; border-radius:8px; padding:80px 40px; box-sizing:border-box;
+  min-height:100vh;
+}
+.homepage h1 { font-size:24px; margin-bottom:10px; }
+.homepage p { font-size:18px; margin-bottom:20px; }
+#home-search-input {
+  width:300px; padding:12px; font-size:16px; border:1px solid #ccc;
+  border-radius:25px; box-sizing:border-box; margin-bottom:10px;
+}
+#home-search-form button {
+  padding:10px 20px; font-size:16px; border:none; border-radius:25px;
+  background:#007bff; color:#fff; cursor:pointer; transition:background-color 0.3s;
+}
+#home-search-form button:hover { background:#0056b3; }
+#home-ai-response {
+  margin-top:20px;
+  margin-bottom:40px;
+  white-space:pre-wrap;
+  width:100%;
+  max-width:900px;
+  align-self:center;
+  background:transparent;
+  border:1px solid transparent;
+  border-radius:8px;
+  padding:0;
+  box-sizing:border-box;
+  min-height:0;
+  font-size:16px;
+  line-height:1.5;
+  max-height:600px;
+  overflow-y:auto;
+  display:none;
+  flex-direction:column-reverse;
+  transition:background 0.2s;
+}
+#home-ai-response.active {
+  display:flex;
+  background:#fff;
+  padding:20px;
+  min-height:120px;
+}
+.ai-response-item {
+  margin-bottom:18px;
+  padding:15px 12px;
+  border-left:3px solid #007bff;
+  background:#f9f9ff;
+  border-radius:6px;
+  box-sizing:border-box;
+}
+.mealplan-form input, .mealplan-form textarea {
+  padding:10px; font-size:14px; margin-bottom:10px;
+  border:1px solid #ccc; border-radius:4px; width:100%; box-sizing:border-box;
+}
+.mealplan-form textarea { resize:vertical; min-height:80px; }
+.mealplan-form button {
+  width:150px; padding:10px; font-size:14px; border:none;
+  border-radius:4px; background:#28a745; color:#fff; transition:background-color 0.3s;
+}
+.mealplan-form button:hover { background:#218838; }
+.mealplan-item {
+  background:#fff; padding:10px; margin-bottom:10px;
+  border:1px solid #e0e0e0; border-radius:4px;
+}
+.calorie-form input[type="text"], .calorie-form input[type="number"] {
+  padding:10px; font-size:14px; margin-bottom:10px;
+  border:1px solid #ccc; border-radius:4px; width:100%; box-sizing:border-box;
+}
+.calorie-form button {
+  width:150px; padding:10px; font-size:14px; border:none;
+  border-radius:4px; background:#17a2b8; color:#fff; transition:background-color 0.3s;
+}
+.calorie-form button:hover { background:#138496; }
+#calorie-log { margin-top:20px; }
+.recipe-form input[type="text"] {
+  padding:10px; font-size:14px; margin-bottom:10px;
+  border:1px solid #ccc; border-radius:4px; width:100%; box-sizing:border-box;
+}
+.recipe-form button {
+  padding:10px 20px; font-size:14px; border:none;
+  border-radius:4px; background:#ffc107; color:#000; transition:background-color 0.3s;
+}
+.recipe-form button:hover { background:#e0a800; }
+#recipe-result { white-space:pre-wrap; margin-top:10px; }
+#savedrecipes-list .mealplan-item { white-space:pre-wrap; }
+.task-form input, .task-form button {
+  padding:10px; font-size:14px; margin-bottom:10px;
+  border:1px solid #ccc; border-radius:4px; box-sizing:border-box;
+}
+.task-form button {
+  border:none; background:#17a2b8; color:#fff; cursor:pointer;
+  transition:background-color 0.3s;
+}
+.task-form button:hover { background:#138496; }
+#new-note-form input, #new-note-form textarea {
+  padding:10px; font-size:14px; margin-bottom:10px;
+  border:1px solid #ccc; border-radius:4px; width:100%; box-sizing:border-box;
+}
+#new-note-form textarea { resize:vertical; min-height:150px; }
+#new-note-form button {
+  width:120px; padding:10px; font-size:14px; border:none;
+  border-radius:4px; background:#007bff; color:#fff; transition:background-color 0.3s;
+}
+#new-note-form button:hover { background:#0056b3; }
+.note {
+  background:#fff; padding:15px; margin-bottom:10px;
+  border:1px solid #e0e0e0; border-radius:4px; cursor:pointer;
+}
+.note .note-title { font-weight:bold; margin-bottom:5px; }
+.note .note-content { margin-bottom:10px; }
+.note button.delete-note {
+  font-size:12px; padding:5px 10px; border:none;
+  border-radius:4px; background:#dc3545; color:#fff; transition:background-color 0.3s;
+}
+.note button.delete-note:hover { background:#c82333; }
+.account-form input, .account-form button {
+  padding:10px; font-size:14px; margin-bottom:10px;
+  border:1px solid #ccc; border-radius:4px; width:100%; box-sizing:border-box;
+}
+.account-form button {
+  border:none; background:#17a2b8; color:#fff; cursor:pointer;
+  transition:background-color 0.3s;
+}
+.account-form button:hover { background:#138496; }
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.news-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.news-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.news-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.news-item p {
+  font-size: 16px;
+  color: #555;
+}
+.sidebar-collapse-btn {
+  display: none;
+  position: fixed;
+  top: 18px;
+  left: 250px;
+  width: 32px;
+  height: 32px;
+  background: #f3f3f3;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  font-size: 20px;
+  color: #444;
+  transition: background 0.2s, left 0.3s;
+}
+.sidebar-collapse-btn:hover {
+  background: #e6e6e6;
+}
+@media (min-width: 769px) {
+  .sidebar-collapse-btn { display: flex; }
+  .sidebar.collapsed ~ .sidebar-collapse-btn {
+    left: 0;
+  }
+  .sidebar:not(.collapsed) ~ .sidebar-collapse-btn {
+    left: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar-collapse-btn { display: none !important; }
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding: 10px 0 6px 0;
+  z-index: 3000;
+}
+.footer-icons-row {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  margin-bottom: 2px;
+}
+.footer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.footer-icon:hover {
+  background: #f3f3f3;
+}
+.footer-icon svg {
+  display: block;
+}
+.footer-copyright {
+  font-size: 13px;
+  color: #888;
+  margin-top: 2px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+@media (max-width: 768px) {
+  .footer {
+    padding: 8px 0 4px 0;
+  }
+  .footer-icons-row {
+    gap: 18px;
+  }
+  .footer-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .footer-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+  .footer-copyright {
+    font-size: 12px;
+  }
+}
