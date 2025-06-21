@@ -41,14 +41,14 @@ function setActive(item) {
   document.querySelectorAll('.menu-item').forEach(i=>i.classList.remove('active'));
   item.classList.add('active');
 }
-const menuHome     = document.getElementById('menu-home'),
-      menuMeal     = document.getElementById('menu-mealplans'),
-      menuCal      = document.getElementById('menu-calorie'),
-      menuRec      = document.getElementById('menu-recipes'),
-      menuSave     = document.getElementById('menu-savedrecipes'),
-      menuTasks    = document.getElementById('menu-tasks'),
-      menuNotes    = document.getElementById('menu-notes'),
-      menuAccount  = document.getElementById('menu-account'),
+const menuHome     = document.getElementById('menu-section-home'),
+      menuMeal     = document.getElementById('menu-section-mealplans'),
+      menuCal      = document.getElementById('menu-section-calorie'),
+      menuRec      = document.getElementById('menu-section-recipes'),
+      menuSave     = document.getElementById('menu-section-savedrecipes'),
+      menuTasks    = document.getElementById('menu-section-tasks'),
+      menuNotes    = document.getElementById('menu-section-notes'),
+      menuAccount  = document.getElementById('menu-section-account'),
       sidebar      = document.querySelector('.sidebar'),
       toggle       = document.getElementById('sidebar-toggle'),
       abbrev       = document.getElementById('sidebar-abbrev');
@@ -65,7 +65,17 @@ menuTasks.onclick      = ()=>{ showSection('section-tasks'); setActive(menuTasks
 menuNotes.onclick      = ()=>{ showSection('section-notes'); setActive(menuNotes); displayNotes(); updateAbbrev(); };
 menuAccount.onclick    = ()=>{ showSection('section-account'); setActive(menuAccount); loadAccount(); updateAbbrev(); };
 function checkWidth(){
-  window.innerWidth<=768 ? sidebar.classList.add('collapsed') : sidebar.classList.remove('collapsed');
+  if(window.innerWidth<=768) {
+    if (!sidebar.classList.contains('collapsed')) {
+      document.body.classList.add('sidebar-open');
+    } else {
+      document.body.classList.remove('sidebar-open');
+    }
+    sidebar.classList.add('collapsed');
+  } else {
+    sidebar.classList.remove('collapsed');
+    document.body.classList.remove('sidebar-open');
+  }
   updateAbbrev();
 }
 window.addEventListener('resize',checkWidth);
@@ -75,11 +85,22 @@ window.addEventListener('load',()=>{
 });
 toggle.addEventListener('click',()=>{
   sidebar.classList.toggle('collapsed');
+  if(window.innerWidth<=768) {
+    if (!sidebar.classList.contains('collapsed')) {
+      document.body.classList.add('sidebar-open');
+    } else {
+      document.body.classList.remove('sidebar-open');
+    }
+  }
   updateAbbrev();
 });
 document.querySelectorAll('.menu-item').forEach(it=>{
   it.addEventListener('click',()=>{
-    if(window.innerWidth<=768) { sidebar.classList.add('collapsed'); updateAbbrev(); }
+    if(window.innerWidth<=768) {
+      sidebar.classList.add('collapsed');
+      document.body.classList.remove('sidebar-open');
+      updateAbbrev();
+    }
   });
 });
 // -- Home AI Search --
@@ -106,36 +127,7 @@ document.getElementById('home-search-form').addEventListener('submit',async e=>{
   }
   e.target.reset();
 });
-// -- Meal Plans --
-function saveMealPlans(mp){ localStorage.setItem('mealPlans', JSON.stringify(mp)); }
-function loadMealPlans(){ const m=localStorage.getItem('mealPlans'); return m?JSON.parse(m):[]; }
-function displayMealPlans(){
-  const list = document.getElementById('mealplan-list'), items = loadMealPlans();
-  list.innerHTML = items.length
-    ? items.map(m=>`<div class="mealplan-item"><strong>${m.date} – ${m.title}</strong><p>${m.desc}</p></div>`).join('')
-    : '<p>No meal plans yet.</p>';
-}
-document.getElementById('mealplan-form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const d=document.getElementById('mealplan-date').value,
-        t=document.getElementById('mealplan-title').value.trim(),
-        desc=document.getElementById('mealplan-description').value.trim();
-  if(!d||!t||!desc){ alert('Fill all meal plan fields.'); return; }
-  const arr=loadMealPlans(); arr.push({date:d,title:t,desc:desc}); saveMealPlans(arr);
-  e.target.reset(); displayMealPlans();
-});
-// -- Calorie Counter --
-function saveCalories(cl){ localStorage.setItem('calories', JSON.stringify(cl)); }
-function loadCalories(){ const c=localStorage.getItem('calories'); return c?JSON.parse(c):[]; }
-function displayCalories(){
-  const log = document.getElementById('calorie-log'), arr = loadCalories();
-  let total = arr.reduce((sum,i)=>sum+i.cals,0);
-  if(!arr.length) log.innerHTML = '<p>No entries yet.</p>';
-  else {
-    log.innerHTML = arr.map(i=>`<div class="mealplan-item">${i.name}: ${i.cals} cal</div>`).join('') +
-      `<p><strong>Total: ${total} cal</strong></p>`;
-  }
-}
+
 document.getElementById('calorie-form').addEventListener('submit',e=>{
   e.preventDefault();
   const n=document.getElementById('food-name').value.trim(),
@@ -240,3 +232,23 @@ function updateCollapseBtnIcon() {
 }
 window.addEventListener('resize', updateCollapseBtnIcon);
 window.addEventListener('load', updateCollapseBtnIcon);
+// Theme toggle functionality (no localStorage, default light)
+(function() {
+  function setTheme(dark) {
+    if (dark) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+    // Always start in light mode
+    setTheme(false);
+    // Attach event listeners to all theme toggle buttons
+    document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        setTheme(!document.body.classList.contains('dark-theme'));
+      });
+    });
+  });
+})();
