@@ -56,7 +56,7 @@ body, html { margin:0; padding:0; font-family:Arial,sans-serif; background-color
 }
 .main-content {
   flex-grow:1;
-  padding:20px;
+  padding:20px 20px 240px 20px; /* Doubled bottom padding for more scroll space past articles */
   overflow-y:auto;
   position:relative;
   min-height:1800px; /* Increased for more page length */
@@ -64,8 +64,8 @@ body, html { margin:0; padding:0; font-family:Arial,sans-serif; background-color
 .section { display:none; }
 .homepage {
   display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
-  height:100%; background:#fff; border-radius:8px; padding:80px 40px; box-sizing:border-box;
-  min-height:100vh;
+  height:100%; background:#fff; border-radius:8px; padding:80px 40px 160px 40px; box-sizing:border-box;
+  min-height:calc(100vh + 400px); /* Doubled the extra height for more scrollable content */
 }
 .homepage h1 { font-size:24px; margin-bottom:10px; }
 .homepage p { font-size:18px; margin-bottom:20px; }
@@ -649,4 +649,58 @@ body.dark-theme, .dark-theme body {
   .about-section {
     padding: 32px 0 40px 0;
   }
+}
+
+/* Footer Links Section */
+.footer-links {
+  position: fixed;
+  left: 0;
+  bottom: 70px; /* Position above the footer */
+  width: 100%;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 12px 0;
+  z-index: 2999; /* Below footer but above content */
+}
+
+.footer-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 400;
+}
+
+.footer-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    gap: 20px;
+    padding: 10px 8px;
+    flex-wrap: wrap;
+  }
+  .footer-link {
+    font-size: 13px;
+  }
+}
+
+/* Dark theme styles for footer links */
+.dark-theme .footer-links {
+  background: #23272a !important;
+  border-top: 1px solid #222 !important;
+}
+
+.dark-theme .footer-link {
+  color: #fff !important;
+}
+
+.dark-theme .footer-link:hover {
+  color: #007bff !important;
 }
