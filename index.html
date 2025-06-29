@@ -66,26 +66,31 @@
 
         <!-- AI and Tech News Section -->
         <div id="home-news-section" style="margin-top:80px; width:100%; max-width:900px; align-self:center;">
-          <h2 style="font-size:22px; margin-bottom:20px;">AI and Tech News</h2>
-          <div class="news-container" style="display:flex; flex-direction:column; gap:20px; max-height:400px; overflow-y:auto; padding-right:10px;">
+          <h2 style="font-size:22px; margin-bottom:20px;">AI and Tech News</h2>          <div class="news-container" style="display:flex; flex-direction:column; gap:20px; max-height:400px; overflow-y:auto; padding-right:10px;">
             <!-- News Item 1 -->
-            <div class="news-item" style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:20px; box-sizing:border-box;">
-              <img src="assets/ph_1.png" alt="News Thumbnail" style="width:100%; border-radius:8px; margin-bottom:15px;">
-              <h3 style="font-size:20px; margin-bottom:10px;">Headline for AI News</h3>
-              <p style="font-size:16px; color:#555;">Brief description of the news article goes here...</p>
-            </div>
+            <a href="#" class="news-item-link" style="text-decoration:none; color:inherit;">
+              <div class="news-item" style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:20px; box-sizing:border-box;">
+                <img src="assets/ph_1.png" alt="News Thumbnail" style="width:100%; border-radius:8px; margin-bottom:15px;">
+                <h3 style="font-size:20px; margin-bottom:10px;">Headline for AI News</h3>
+                <p style="font-size:16px; color:#555;">Brief description of the news article goes here...</p>
+              </div>
+            </a>
             <!-- News Item 2 -->
-            <div class="news-item" style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:20px; box-sizing:border-box;">
-              <img src="assets/ph_2.png" alt="News Thumbnail" style="width:100%; border-radius:8px; margin-bottom:15px;">
-              <h3 style="font-size:20px; margin-bottom:10px;">Second AI/Tech Headline</h3>
-              <p style="font-size:16px; color:#555;">Another brief description for a different news article...</p>
-            </div>
+            <a href="#" class="news-item-link" style="text-decoration:none; color:inherit;">
+              <div class="news-item" style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:20px; box-sizing:border-box;">
+                <img src="assets/ph_2.png" alt="News Thumbnail" style="width:100%; border-radius:8px; margin-bottom:15px;">
+                <h3 style="font-size:20px; margin-bottom:10px;">Second AI/Tech Headline</h3>
+                <p style="font-size:16px; color:#555;">Another brief description for a different news article...</p>
+              </div>
+            </a>
             <!-- News Item 3 -->
-            <div class="news-item" style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:20px; box-sizing:border-box;">
-              <img src="assets/ph_3.png" alt="News Thumbnail" style="width:100%; border-radius:8px; margin-bottom:15px;">
-              <h3 style="font-size:20px; margin-bottom:10px;">Third AI/Tech Headline</h3>
-              <p style="font-size:16px; color:#555;">A third brief description for another news article...</p>
-            </div>
+            <a href="#" class="news-item-link" style="text-decoration:none; color:inherit;">
+              <div class="news-item" style="background:#fff; border:1px solid #e0e0e0; border-radius:8px; padding:20px; box-sizing:border-box;">
+                <img src="assets/ph_3.png" alt="News Thumbnail" style="width:100%; border-radius:8px; margin-bottom:15px;">
+                <h3 style="font-size:20px; margin-bottom:10px;">Third AI/Tech Headline</h3>
+                <p style="font-size:16px; color:#555;">A third brief description for another news article...</p>
+              </div>
+            </a>
           </div>
           <div style="height:40px;"></div>
           <!-- Article Grid -->
@@ -197,21 +202,26 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Calorie Counter -->
-      <div id="section-calorie" class="section">
-        <h2>Calorie Counter</h2>
-        <form id="calorie-form" class="calorie-form">
-          <input type="text" id="food-name" placeholder="Food Name" required />
-          <input type="number" id="food-cals" placeholder="Calories" required />
-          <button type="submit">Add Manually</button>
-        </form>
-        <form id="calorie-ai-form" class="calorie-form">
-          <input type="text" id="food-lookup" placeholder="Lookup calories via AI…" required />
-          <button type="button" id="lookup-cals">Lookup</button>
-        </form>
-        <div id="calorie-log"></div>
+      </div>      <!-- Contact -->
+      <div id="section-calorie" class="section contact-section">
+        <div class="contact-container">
+          <h2>Contact Us</h2>
+          <p class="contact-description">Get in touch with our team. We'd love to hear from you and discuss how we can help with your AI and technology needs.</p>
+          
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="contact-name" placeholder="Enter your full name" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="contact-email" placeholder="Enter your email address" required />
+            </div>
+            
+            <button type="submit" class="contact-submit-btn">Continue to Detailed Form</button>
+          </form>
+        </div>
       </div>
 
       <!-- Recipes -->

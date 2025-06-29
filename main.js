@@ -56,14 +56,14 @@ function updateAbbrev() {
   if (sidebar.classList.contains('collapsed')) abbrev.style.display = 'block';
   else abbrev.style.display = 'none';
 }
-menuHome.onclick       = ()=>{ showSection('section-home'); setActive(menuHome); updateAbbrev(); };
-menuMeal.onclick       = ()=>{ showSection('section-mealplans'); setActive(menuMeal); displayMealPlans(); updateAbbrev(); };
-menuCal.onclick        = ()=>{ showSection('section-calorie'); setActive(menuCal); displayCalories(); updateAbbrev(); };
-menuRec.onclick        = ()=>{ showSection('section-recipes'); setActive(menuRec); updateAbbrev(); };
-menuSave.onclick       = ()=>{ showSection('section-savedrecipes'); setActive(menuSave); displaySavedRecipes(); updateAbbrev(); };
-menuTasks.onclick      = ()=>{ showSection('section-tasks'); setActive(menuTasks); displayTasks(); updateAbbrev(); };
-menuNotes.onclick      = ()=>{ showSection('section-notes'); setActive(menuNotes); displayNotes(); updateAbbrev(); };
-menuAccount.onclick    = ()=>{ showSection('section-account'); setActive(menuAccount); loadAccount(); updateAbbrev(); };
+menuHome.onclick       = ()=>{ showSection('section-home'); setActive(menuHome); updateAbbrev(); scrollToTop(); };
+menuMeal.onclick       = ()=>{ showSection('section-mealplans'); setActive(menuMeal); displayMealPlans(); updateAbbrev(); scrollToTop(); };
+menuCal.onclick        = ()=>{ showSection('section-calorie'); setActive(menuCal); updateAbbrev(); scrollToTop(); };
+menuRec.onclick        = ()=>{ showSection('section-recipes'); setActive(menuRec); updateAbbrev(); scrollToTop(); };
+menuSave.onclick       = ()=>{ showSection('section-savedrecipes'); setActive(menuSave); displaySavedRecipes(); updateAbbrev(); scrollToTop(); };
+menuTasks.onclick      = ()=>{ showSection('section-tasks'); setActive(menuTasks); displayTasks(); updateAbbrev(); scrollToTop(); };
+menuNotes.onclick      = ()=>{ showSection('section-notes'); setActive(menuNotes); displayNotes(); updateAbbrev(); scrollToTop(); };
+menuAccount.onclick    = ()=>{ showSection('section-account'); setActive(menuAccount); loadAccount(); updateAbbrev(); scrollToTop(); };
 function checkWidth(){
   if(window.innerWidth<=768) {
     if (!sidebar.classList.contains('collapsed')) {
@@ -128,23 +128,37 @@ document.getElementById('home-search-form').addEventListener('submit',async e=>{
   e.target.reset();
 });
 
-document.getElementById('calorie-form').addEventListener('submit',e=>{
+// -- Contact Form --
+document.getElementById('contact-form').addEventListener('submit', e => {
   e.preventDefault();
-  const n=document.getElementById('food-name').value.trim(),
-        c=+document.getElementById('food-cals').value;
-  if(!n||!c){ alert('Complete both fields.'); return; }
-  const arr=loadCalories(); arr.push({name:n,cals:c}); saveCalories(arr);
-  e.target.reset(); displayCalories();
-});
-document.getElementById('lookup-cals').addEventListener('click',async()=>{
-  const food=document.getElementById('food-lookup').value.trim();
-  if(!food){ alert('Enter a food to lookup.'); return; }
-  const aiRes=await askAI(`How many calories are in 100g of ${food}?`);
-  const match=aiRes.match(/(\d+)\s*cal/);
-  const cals=match?+match[1]:NaN;
-  if(isNaN(cals)){ alert('Could not parse calorie value.'); return; }
-  const arr=loadCalories(); arr.push({name:food,cals:cals}); saveCalories(arr);
-  document.getElementById('food-lookup').value=''; displayCalories();
+  const name = document.getElementById('contact-name').value.trim();
+  const email = document.getElementById('contact-email').value.trim();
+  
+  if (!name || !email) {
+    alert('Please fill in both name and email fields.');
+    return;
+  }
+  
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+  
+  // Build Google Form URL with pre-filled data
+  const baseUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdWgIaOL-iYaemjbxisVdpWAT2QoFjtsDp6zdKD_hg-S9p1ew/viewform';
+  const params = new URLSearchParams({
+    'usp': 'pp_url',
+    'entry.2005620554': name,  // You may need to adjust these entry IDs based on your form
+    'entry.1045781291': email
+  });
+  
+  // Open Google Form in new tab with pre-filled data
+  window.open(`${baseUrl}?${params.toString()}`, '_blank');
+  
+  // Reset form
+  e.target.reset();
 });
 // -- Recipes & Saved Recipes --
 function saveRecipes(r){ localStorage.setItem('recipes', JSON.stringify(r)); }
@@ -252,3 +266,13 @@ window.addEventListener('load', updateCollapseBtnIcon);
     });
   });
 })();
+// -- Scroll to Top Function --
+function scrollToTop() {
+  // Scroll the main content area to the top
+  const mainContent = document.querySelector('.main-content');
+  if (mainContent) {
+    mainContent.scrollTop = 0;
+  }
+  // Also scroll the window to the top as a fallback
+  window.scrollTo(0, 0);
+}

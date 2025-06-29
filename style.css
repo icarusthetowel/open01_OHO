@@ -704,3 +704,210 @@ body.dark-theme, .dark-theme body {
 .dark-theme .footer-link:hover {
   color: #007bff !important;
 }
+
+/* Contact Section Styles */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh; /* Reduced height for mobile */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto; /* Ensure centering */
+  box-sizing: border-box;
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #fafafa;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+  background: #fff;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+
+.contact-submit-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Dark theme styles for contact form */
+.dark-theme .contact-container {
+  background: #23272a !important;
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-container h2 {
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-description {
+  color: #ccc !important;
+}
+
+.dark-theme .form-group label {
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-form input[type="text"],
+.dark-theme .contact-form input[type="email"] {
+  background: #181a1b !important;
+  border-color: #444 !important;
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-form input[type="text"]:focus,
+.dark-theme .contact-form input[type="email"]:focus {
+  border-color: #007bff !important;
+  background: #23272a !important;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    min-height: 40vh; /* Even shorter on mobile */
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 40px; /* Add some top spacing */
+  }
+  
+  .contact-container {
+    padding: 24px 20px;
+    margin: 0 auto;
+    max-width: 90%; /* Ensure it fits within screen bounds */
+    width: 90%;
+    border-radius: 8px;
+  }
+  
+  .contact-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    padding: 12px 14px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .contact-submit-btn {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* News Item Link Styles */
+.news-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-item-link:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.news-item-link:hover .news-item {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-color: #007bff;
+}
+
+.news-item-link .news-item {
+  transition: box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.news-item-link:hover .news-item h3 {
+  color: #007bff;
+}
+
+/* Dark theme styles for news item links */
+.dark-theme .news-item-link:hover .news-item {
+  border-color: #007bff !important;
+  box-shadow: 0 4px 16px rgba(0,123,255,0.3) !important;
+}
+
+.dark-theme .news-item-link:hover .news-item h3 {
+  color: #007bff !important;
+}
