@@ -1,4 +1,3 @@
 ﻿# open01_OHO
- Version 1.9.4
+ Version 2.0 6/29/25
 this is the second instalation of Omni hardware optimized's offical website
-main.JS >tbercich@gmail.com
