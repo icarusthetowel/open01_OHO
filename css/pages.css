@@ -1,0 +1,240 @@
+/* Page Section Styles - Specific page layouts */
+
+/* News Section */
+.news-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 48px;
+}
+
+.news-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.news-item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.news-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.news-item p {
+  font-size: 16px;
+  color: #555;
+}
+
+.news-item-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-item-link:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.news-item-link:hover .news-item {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-color: #007bff;
+}
+
+.news-item-link .news-item {
+  transition: box-shadow 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.news-item-link:hover .news-item h3 {
+  color: #007bff;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 0 56px 0;
+  min-height: 420px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 32px;
+  margin-top: 48px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px 24px 20px;
+  transition: box-shadow 0.2s;
+  min-height: 320px;
+}
+
+.team-card:hover {
+  box-shadow: 0 6px 32px rgba(0,0,0,0.13);
+}
+
+.team-img-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: #b0b0b0;
+  object-fit: cover;
+}
+
+.team-info {
+  text-align: center;
+}
+
+.team-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 14px;
+}
+
+.team-socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.team-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  color: #0077b5;
+  font-size: 1.25rem;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  margin: 0 2px;
+}
+
+.team-social-link:hover {
+  background: #e0eaff;
+  color: #005fa3;
+  transform: scale(1.13);
+}
+
+/* Social Icons */
+.icon-linkedin:before {
+  content: "\f0e1";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.icon-github:before {
+  content: "\f09b";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.icon-x:before {
+  content: "\e61b";
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+.icon-facebook:before {
+  content: "\f09a";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+/* Article Grid */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin: 64px 0 0 0;
+}
+
+.article-box {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 12px 16px 12px;
+  transition: box-shadow 0.2s;
+}
+
+.article-box:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.article-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background: #f3f3f3;
+}
+
+.article-title {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.article-link {
+  font-size: 15px;
+  color: #007bff;
+  text-decoration: underline;
+  margin-left: 8px;
+}
+
+.article-link:hover {
+  color: #0056b3;
+}
+
+/* Page Section Media Queries */
+@media (max-width: 700px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-section {
+    padding: 32px 0 40px 0;
+  }
+}

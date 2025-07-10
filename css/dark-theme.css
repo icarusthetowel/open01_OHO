@@ -1,0 +1,147 @@
+/* Dark Theme Styles */
+body.dark-theme, 
+.dark-theme body {
+  background: #181a1b !important;
+  color: #e6e6e6 !important;
+}
+
+/* Main Content Dark Theme */
+.dark-theme .main-content,
+.dark-theme .homepage,
+.dark-theme .news-item,
+.dark-theme .mealplan-item,
+.dark-theme .note,
+.dark-theme .article-box {
+  background: #23272a !important;
+  color: #e6e6e6 !important;
+  border-color: #222 !important;
+}
+
+/* Sidebar Dark Theme */
+.dark-theme .sidebar {
+  background: #202225 !important;
+  border-right: 1px solid #222 !important;
+}
+
+.dark-theme .sidebar-collapse-btn {
+  background: #23272a !important;
+  color: #e6e6e6 !important;
+  border-color: #222 !important;
+}
+
+.dark-theme .menu-item,
+.dark-theme .company-name {
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .menu-item.active,
+.dark-theme .menu-item:hover {
+  background: #23272a !important;
+}
+
+/* Footer Dark Theme */
+.dark-theme .footer {
+  background: #202225 !important;
+  border-top: 1px solid #222 !important;
+  color: #aaa !important;
+}
+
+.dark-theme .footer-icon svg rect,
+.dark-theme .footer-icon svg circle,
+.dark-theme .footer-icon svg path {
+  stroke: #fff !important;
+}
+
+.dark-theme .footer-icon svg circle[fill],
+.dark-theme .footer-icon svg path[fill] {
+  fill: #fff !important;
+}
+
+.dark-theme .footer-links {
+  background: #23272a !important;
+  border-top: 1px solid #222 !important;
+}
+
+.dark-theme .footer-link {
+  color: #fff !important;
+}
+
+.dark-theme .footer-link:hover {
+  color: #007bff !important;
+}
+
+/* Authentication Dark Theme */
+.dark-theme .auth-btn {
+  background: #23272a !important;
+  color: #fff !important;
+  border-color: #007bff !important;
+}
+
+.dark-theme .auth-btn.signup-btn {
+  background: #007bff !important;
+  color: #fff !important;
+}
+
+.dark-theme .auth-btn:hover {
+  background: #0056b3 !important;
+  color: #fff !important;
+  border-color: #0056b3 !important;
+}
+
+.dark-theme .theme-toggle-btn {
+  background: #23272a !important;
+  border-color: #007bff !important;
+}
+
+.dark-theme .theme-toggle-btn:hover {
+  background: #181a1b !important;
+  border-color: #0056b3 !important;
+}
+
+/* AI Response Dark Theme */
+.dark-theme #home-ai-response,
+.dark-theme #home-ai-response.active,
+.dark-theme .ai-response-item {
+  color: #111 !important;
+}
+
+/* Contact Form Dark Theme */
+.dark-theme .contact-container {
+  background: #23272a !important;
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-container h2 {
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-description {
+  color: #ccc !important;
+}
+
+.dark-theme .form-group label {
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-form input[type="text"],
+.dark-theme .contact-form input[type="email"] {
+  background: #181a1b !important;
+  border-color: #444 !important;
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .contact-form input[type="text"]:focus,
+.dark-theme .contact-form input[type="email"]:focus {
+  border-color: #007bff !important;
+  background: #23272a !important;
+}
+
+/* News Items Dark Theme */
+.dark-theme .news-item-link:hover .news-item {
+  border-color: #007bff !important;
+  box-shadow: 0 4px 16px rgba(0,123,255,0.3) !important;
+}
+
+.dark-theme .news-item-link:hover .news-item h3 {
+  color: #007bff !important;
+}

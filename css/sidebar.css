@@ -1,0 +1,115 @@
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.company-name {
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.sidebar-collapsed-btn-floating {
+  display: none;
+}
+
+.menu-item {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover, 
+.menu-item.active { 
+  background-color: #e6e6e6; 
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-abbrev {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 1100;
+}
+
+.sidebar-collapse-btn {
+  display: none;
+  position: fixed;
+  top: 18px;
+  left: 250px;
+  width: 32px;
+  height: 32px;
+  background: #f3f3f3;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  font-size: 20px;
+  color: #444;
+  transition: background 0.2s, left 0.3s;
+}
+
+.sidebar-collapse-btn:hover {
+  background: #e6e6e6;
+}
+
+/* Sidebar Media Queries */
+@media (max-width: 768px) {
+  .menu-toggle { 
+    display: block; 
+  }
+  .sidebar { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100vh; 
+    z-index: 1000; 
+  }
+  .main-content { 
+    padding-left: 0; 
+  }
+  .sidebar-collapse-btn { 
+    display: none !important; 
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar-collapse-btn { 
+    display: flex; 
+  }
+  .sidebar.collapsed ~ .sidebar-collapse-btn {
+    left: -8px; /* 3/4 of the button visible when sidebar is collapsed */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .sidebar:not(.collapsed) ~ .sidebar-collapse-btn {
+    left: 250px;
+  }
+}

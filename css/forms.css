@@ -1,0 +1,329 @@
+/* Form Styles - All form components */
+
+/* Home Search Form */
+#home-search-input {
+  width: 300px; 
+  padding: 12px; 
+  font-size: 16px; 
+  border: 1px solid #ccc;
+  border-radius: 25px; 
+  box-sizing: border-box; 
+  margin-bottom: 10px;
+}
+
+#home-search-form button {
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 25px;
+  background: #007bff; 
+  color: #fff; 
+  cursor: pointer; 
+  transition: background-color 0.3s;
+}
+
+#home-search-form button:hover { 
+  background: #0056b3; 
+}
+
+/* Meal Plan Forms */
+.mealplan-form input, 
+.mealplan-form textarea {
+  padding: 10px; 
+  font-size: 14px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.mealplan-form textarea { 
+  resize: vertical; 
+  min-height: 80px; 
+}
+
+.mealplan-form button {
+  width: 150px; 
+  padding: 10px; 
+  font-size: 14px; 
+  border: none;
+  border-radius: 4px; 
+  background: #28a745; 
+  color: #fff; 
+  transition: background-color 0.3s;
+}
+
+.mealplan-form button:hover { 
+  background: #218838; 
+}
+
+/* Calorie Forms */
+.calorie-form input[type="text"], 
+.calorie-form input[type="number"] {
+  padding: 10px; 
+  font-size: 14px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.calorie-form button {
+  width: 150px; 
+  padding: 10px; 
+  font-size: 14px; 
+  border: none;
+  border-radius: 4px; 
+  background: #17a2b8; 
+  color: #fff; 
+  transition: background-color 0.3s;
+}
+
+.calorie-form button:hover { 
+  background: #138496; 
+}
+
+/* Recipe Forms */
+.recipe-form input[type="text"] {
+  padding: 10px; 
+  font-size: 14px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.recipe-form button {
+  padding: 10px 20px; 
+  font-size: 14px; 
+  border: none;
+  border-radius: 4px; 
+  background: #ffc107; 
+  color: #000; 
+  transition: background-color 0.3s;
+}
+
+.recipe-form button:hover { 
+  background: #e0a800; 
+}
+
+/* Task Forms */
+.task-form input, 
+.task-form button {
+  padding: 10px; 
+  font-size: 14px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box;
+}
+
+.task-form button {
+  border: none; 
+  background: #17a2b8; 
+  color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-form button:hover { 
+  background: #138496; 
+}
+
+/* Note Forms */
+#new-note-form input, 
+#new-note-form textarea {
+  padding: 10px; 
+  font-size: 14px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+#new-note-form textarea { 
+  resize: vertical; 
+  min-height: 150px; 
+}
+
+#new-note-form button {
+  width: 120px; 
+  padding: 10px; 
+  font-size: 14px; 
+  border: none;
+  border-radius: 4px; 
+  background: #007bff; 
+  color: #fff; 
+  transition: background-color 0.3s;
+}
+
+#new-note-form button:hover { 
+  background: #0056b3; 
+}
+
+/* Account Forms */
+.account-form input, 
+.account-form button {
+  padding: 10px; 
+  font-size: 14px; 
+  margin-bottom: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.account-form button {
+  border: none; 
+  background: #17a2b8; 
+  color: #fff; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.account-form button:hover { 
+  background: #138496; 
+}
+
+/* Contact Form */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 40px 32px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.contact-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #fafafa;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+  background: #fff;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 8px;
+}
+
+.contact-submit-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Contact Form Media Queries */
+@media (max-width: 768px) {
+  .contact-section {
+    min-height: 40vh;
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+  
+  .contact-container {
+    padding: 24px 20px;
+    margin: 0 auto;
+    max-width: 90%;
+    width: 90%;
+    border-radius: 8px;
+  }
+  
+  .contact-container h2 {
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+  
+  .contact-submit-btn {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}

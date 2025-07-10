@@ -1,0 +1,30 @@
+/* Main Stylesheet - Imports all modular CSS files */
+/* AI Omni Hardware - Modular CSS Architecture */
+
+/* Import order is important for cascade and specificity */
+@import url('base.css');        /* Global styles and layout */
+@import url('sidebar.css');     /* Sidebar navigation */
+@import url('components.css');  /* Reusable UI components */
+@import url('forms.css');       /* All form styles */
+@import url('pages.css');       /* Page-specific layouts */
+@import url('footer.css');      /* Footer styles */
+@import url('dark-theme.css');  /* Dark theme overrides */
+
+/* 
+CSS Architecture Notes:
+- base.css: Foundation styles, resets, typography
+- sidebar.css: Navigation sidebar and mobile responsive
+- components.css: Reusable UI elements (buttons, cards, etc.)
+- forms.css: All form styling and interactions
+- pages.css: Page-specific layouts and content
+- footer.css: Footer and footer links styling
+- dark-theme.css: Dark mode theme overrides
+
+This modular approach provides:
+✓ Better maintainability
+✓ Easier debugging
+✓ Faster load times (can load only needed modules)
+✓ Better team collaboration
+✓ Cleaner git diffs
+✓ Easier testing
+*/

@@ -1,0 +1,49 @@
+/* Base Styles - Global resets and typography */
+body, html { 
+  margin: 0; 
+  padding: 0; 
+  font-family: Arial, sans-serif; 
+  background-color: #f7f7f7; 
+  height: 100%; 
+}
+
+.container { 
+  display: flex; 
+  height: 100vh; 
+}
+
+/* Section and Page Layout */
+.section { 
+  display: none; 
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px 20px 240px 20px; /* Doubled bottom padding for more scroll space past articles */
+  overflow-y: auto;
+  position: relative;
+  min-height: 1800px; /* Increased for more page length */
+}
+
+.homepage {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: flex-start; 
+  align-items: center;
+  height: 100%; 
+  background: #fff; 
+  border-radius: 8px; 
+  padding: 80px 40px 160px 40px; 
+  box-sizing: border-box;
+  min-height: calc(100vh + 400px); /* Doubled the extra height for more scrollable content */
+}
+
+.homepage h1 { 
+  font-size: 24px; 
+  margin-bottom: 10px; 
+}
+
+.homepage p { 
+  font-size: 18px; 
+  margin-bottom: 20px; 
+}
