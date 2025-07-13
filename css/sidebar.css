@@ -60,7 +60,7 @@
 
 .sidebar-collapse-btn {
   display: none;
-  position: fixed;
+  position: absolute;
   top: 18px;
   left: 250px;
   width: 32px;

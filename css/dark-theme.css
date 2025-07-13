@@ -145,3 +145,27 @@ body.dark-theme,
 .dark-theme .news-item-link:hover .news-item h3 {
   color: #007bff !important;
 }
+
+/* Resources Section Dark Theme */
+.dark-theme .resource-category {
+  background: #23272a !important;
+  border-color: #222 !important;
+  color: #e6e6e6 !important;
+}
+
+.dark-theme .resource-category h3 {
+  color: #e6e6e6 !important;
+  border-bottom-color: #007bff !important;
+}
+
+.dark-theme .resource-list li {
+  border-bottom-color: #333 !important;
+}
+
+.dark-theme .resource-list a {
+  color: #4fc3f7 !important;
+}
+
+.dark-theme .resource-list a:hover {
+  color: #81d4fa !important;
+}

@@ -37,6 +37,9 @@
   <div id="sidebar-toggle" class="menu-toggle">☰</div>
   <div id="sidebar-abbrev" class="menu-abbrev">OHO</div>
 
+  <!-- Sidebar Collapse Button (always visible on desktop) - FIXED POSITION -->
+  <button id="sidebar-collapse-btn" class="sidebar-collapse-btn" title="Collapse sidebar">&#x25C0;</button>
+
   <div class="container">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -56,9 +59,6 @@
         </svg>
       </button>
     </div>
-
-    <!-- Sidebar Collapse Button (always visible on desktop) -->
-    <button id="sidebar-collapse-btn" class="sidebar-collapse-btn" title="Collapse sidebar">&#x25C0;</button>
 
     <!-- Main Content -->
     <div class="main-content">
@@ -244,10 +244,49 @@
         <button id="save-recipe" style="display:none; margin-top:10px;">Save Recipe</button>
       </div>
 
-      <!-- Saved Recipes -->
+      <!-- Resources -->
       <div id="section-savedrecipes" class="section">
-        <h2>Saved Recipes</h2>
-        <div id="savedrecipes-list"></div>
+        <h2>Resources</h2>
+        <div class="resources-container">
+          <!-- Music Resources -->
+          <div class="resource-category">
+            <h3>Music & Audio</h3>
+            <ul class="resource-list">
+              <li><a href="#" target="_blank">Music EDU - Interactive Music Learning</a></li>
+              <li><a href="#" target="_blank">Digital Audio Workstation Guide</a></li>
+              <li><a href="#" target="_blank">Music Theory Resources</a></li>
+              <li><a href="#" target="_blank">Audio Production Tutorials</a></li>
+              <li><a href="#" target="_blank">Free Music Software Collection</a></li>
+              <li><a href="#" target="_blank">Sound Design Resources</a></li>
+            </ul>
+          </div>
+          
+          <!-- Computer Science Resources -->
+          <div class="resource-category">
+            <h3>Computer Science & Programming</h3>
+            <ul class="resource-list">
+              <li><a href="#" target="_blank">Coding Challenges Platform</a></li>
+              <li><a href="#" target="_blank">Algorithm Visualization Tools</a></li>
+              <li><a href="#" target="_blank">Data Structures Reference</a></li>
+              <li><a href="#" target="_blank">Programming Documentation Hub</a></li>
+              <li><a href="#" target="_blank">Open Source Project Gallery</a></li>
+              <li><a href="#" target="_blank">Developer Tools Collection</a></li>
+            </ul>
+          </div>
+          
+          <!-- AI & Technology Resources -->
+          <div class="resource-category">
+            <h3>AI & Technology</h3>
+            <ul class="resource-list">
+              <li><a href="#" target="_blank">Machine Learning Frameworks</a></li>
+              <li><a href="#" target="_blank">AI Research Papers</a></li>
+              <li><a href="#" target="_blank">Technology News Aggregator</a></li>
+              <li><a href="#" target="_blank">Hardware Optimization Guides</a></li>
+              <li><a href="#" target="_blank">Development Environment Setup</a></li>
+              <li><a href="#" target="_blank">Tech Community Forums</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <!-- Task List -->

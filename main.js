@@ -60,7 +60,7 @@ menuHome.onclick       = ()=>{ showSection('section-home'); setActive(menuHome);
 menuMeal.onclick       = ()=>{ showSection('section-mealplans'); setActive(menuMeal); displayMealPlans(); updateAbbrev(); scrollToTop(); };
 menuCal.onclick        = ()=>{ showSection('section-calorie'); setActive(menuCal); updateAbbrev(); scrollToTop(); };
 menuRec.onclick        = ()=>{ showSection('section-recipes'); setActive(menuRec); updateAbbrev(); scrollToTop(); };
-menuSave.onclick       = ()=>{ showSection('section-savedrecipes'); setActive(menuSave); displaySavedRecipes(); updateAbbrev(); scrollToTop(); };
+menuSave.onclick       = ()=>{ showSection('section-savedrecipes'); setActive(menuSave); updateAbbrev(); scrollToTop(); };
 menuTasks.onclick      = ()=>{ showSection('section-tasks'); setActive(menuTasks); displayTasks(); updateAbbrev(); scrollToTop(); };
 menuNotes.onclick      = ()=>{ showSection('section-notes'); setActive(menuNotes); displayNotes(); updateAbbrev(); scrollToTop(); };
 menuAccount.onclick    = ()=>{ showSection('section-account'); setActive(menuAccount); loadAccount(); updateAbbrev(); scrollToTop(); };
@@ -160,15 +160,7 @@ document.getElementById('contact-form').addEventListener('submit', e => {
   // Reset form
   e.target.reset();
 });
-// -- Recipes & Saved Recipes --
-function saveRecipes(r){ localStorage.setItem('recipes', JSON.stringify(r)); }
-function loadRecipes(){ const r=localStorage.getItem('recipes'); return r?JSON.parse(r):[]; }
-function displaySavedRecipes(){
-  const list = document.getElementById('savedrecipes-list'), arr = loadRecipes();
-  list.innerHTML = arr.length
-    ? arr.map(r=>`<div class="mealplan-item"><strong>${r.query}</strong><pre>${r.recipe}</pre></div>`).join('')
-    : '<p>No saved recipes.</p>';
-}
+// -- Recipes --
 document.getElementById('get-recipe').addEventListener('click',async()=>{
   const q=document.getElementById('recipe-query').value.trim();
   if(!q){ alert('Enter a query'); return; }
@@ -176,14 +168,6 @@ document.getElementById('get-recipe').addEventListener('click',async()=>{
   resDiv.textContent='Thinking…';
   const ans=await askAI(`Provide a detailed recipe for: ${q}`);
   resDiv.textContent=ans;
-  const btn=document.getElementById('save-recipe');
-  btn.style.display='inline-block'; btn.dataset.q=q;
-});
-document.getElementById('save-recipe').addEventListener('click',()=>{
-  const btn=document.getElementById('save-recipe'),
-        q=btn.dataset.q, rec=document.getElementById('recipe-result').textContent;
-  const arr=loadRecipes(); arr.push({query:q,recipe:rec}); saveRecipes(arr);
-  alert('Recipe saved!'); btn.style.display='none';
 });
 // -- Task List --
 function saveTasks(ts){ localStorage.setItem('tasks', JSON.stringify(ts)); }
