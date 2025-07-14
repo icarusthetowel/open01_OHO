@@ -60,7 +60,7 @@
 
 .sidebar-collapse-btn {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 18px;
   left: 250px;
   width: 32px;
@@ -99,17 +99,26 @@
   .sidebar-collapse-btn { 
     display: none !important; 
   }
+  
+  /* Mobile sidebar overlay when open */
+  body.sidebar-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  body.sidebar-open .sidebar {
+    transform: translateX(0);
+  }
 }
 
 @media (min-width: 769px) {
   .sidebar-collapse-btn { 
     display: flex; 
-  }
-  .sidebar.collapsed ~ .sidebar-collapse-btn {
-    left: -8px; /* 3/4 of the button visible when sidebar is collapsed */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-  .sidebar:not(.collapsed) ~ .sidebar-collapse-btn {
-    left: 250px;
   }
 }

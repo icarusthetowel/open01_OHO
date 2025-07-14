@@ -64,6 +64,29 @@ menuSave.onclick       = ()=>{ showSection('section-savedrecipes'); setActive(me
 menuTasks.onclick      = ()=>{ showSection('section-tasks'); setActive(menuTasks); displayTasks(); updateAbbrev(); scrollToTop(); };
 menuNotes.onclick      = ()=>{ showSection('section-notes'); setActive(menuNotes); displayNotes(); updateAbbrev(); scrollToTop(); };
 menuAccount.onclick    = ()=>{ showSection('section-account'); setActive(menuAccount); loadAccount(); updateAbbrev(); scrollToTop(); };
+
+// -- Auth Buttons Navigation --
+const signupBtn = document.querySelector('.signup-btn'),
+      loginBtn = document.querySelector('.login-btn'),
+      switchToLogin = document.getElementById('switch-to-login'),
+      switchToSignup = document.getElementById('switch-to-signup');
+
+function clearActiveMenuItems() {
+  document.querySelectorAll('.menu-item').forEach(i=>i.classList.remove('active'));
+}
+
+signupBtn.onclick = ()=>{ showSection('section-signup'); clearActiveMenuItems(); updateAbbrev(); scrollToTop(); };
+loginBtn.onclick = ()=>{ showSection('section-login'); clearActiveMenuItems(); updateAbbrev(); scrollToTop(); };
+
+// Handle switching between signup and login pages
+if (switchToLogin) {
+  switchToLogin.onclick = (e)=>{ e.preventDefault(); showSection('section-login'); scrollToTop(); };
+}
+if (switchToSignup) {
+  switchToSignup.onclick = (e)=>{ e.preventDefault(); showSection('section-signup'); scrollToTop(); };
+}
+
+// -- Mobile Sidebar Toggle Functionality --
 function checkWidth(){
   if(window.innerWidth<=768) {
     if (!sidebar.classList.contains('collapsed')) {
@@ -78,11 +101,8 @@ function checkWidth(){
   }
   updateAbbrev();
 }
-window.addEventListener('resize',checkWidth);
-window.addEventListener('load',()=>{
-  checkWidth();
-  menuHome.click();
-});
+
+// Mobile toggle button functionality
 toggle.addEventListener('click',()=>{
   sidebar.classList.toggle('collapsed');
   if(window.innerWidth<=768) {
@@ -94,6 +114,8 @@ toggle.addEventListener('click',()=>{
   }
   updateAbbrev();
 });
+
+// Auto-close sidebar when clicking menu items on mobile
 document.querySelectorAll('.menu-item').forEach(it=>{
   it.addEventListener('click',()=>{
     if(window.innerWidth<=768) {
@@ -103,6 +125,14 @@ document.querySelectorAll('.menu-item').forEach(it=>{
     }
   });
 });
+
+// Window resize handler
+window.addEventListener('resize',checkWidth);
+window.addEventListener('load',()=>{
+  checkWidth();
+  menuHome.click();
+});
+
 // -- Home AI Search --
 document.getElementById('home-search-form').addEventListener('submit',async e=>{
   e.preventDefault();
@@ -223,13 +253,27 @@ document.getElementById('account-form').addEventListener('submit', e=>{
 const collapseBtn = document.getElementById('sidebar-collapse-btn');
 collapseBtn.addEventListener('click', () => {
   sidebar.classList.toggle('collapsed');
-  collapseBtn.innerHTML = sidebar.classList.contains('collapsed') ? '&#x25B6;' : '&#x25C0;';
+  updateCollapseBtnIcon();
+  updateCollapseBtnPosition();
 });
 function updateCollapseBtnIcon() {
   collapseBtn.innerHTML = sidebar.classList.contains('collapsed') ? '&#x25B6;' : '&#x25C0;';
 }
-window.addEventListener('resize', updateCollapseBtnIcon);
-window.addEventListener('load', updateCollapseBtnIcon);
+function updateCollapseBtnPosition() {
+  if (sidebar.classList.contains('collapsed')) {
+    collapseBtn.style.left = '-8px'; // 3/4 of the button visible when sidebar is collapsed
+  } else {
+    collapseBtn.style.left = '250px';
+  }
+}
+window.addEventListener('resize', () => {
+  updateCollapseBtnIcon();
+  updateCollapseBtnPosition();
+});
+window.addEventListener('load', () => {
+  updateCollapseBtnIcon();
+  updateCollapseBtnPosition();
+});
 // Theme toggle functionality (no localStorage, default light)
 (function() {
   function setTheme(dark) {
@@ -260,3 +304,49 @@ function scrollToTop() {
   // Also scroll the window to the top as a fallback
   window.scrollTo(0, 0);
 }
+// -- Signup and Login Form Handling --
+document.addEventListener('DOMContentLoaded', function() {
+  // Signup form handling
+  const signupForm = document.getElementById('signup-form');
+  if (signupForm) {
+    signupForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(signupForm);
+      const password = formData.get('password');
+      const confirmPassword = formData.get('confirmPassword');
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        return;
+      }
+      
+      // Here you would typically send the data to your server
+      console.log('Signup form submitted:', Object.fromEntries(formData));
+      alert('Account created successfully! Please check your email for verification.');
+      
+      // Optionally redirect to login page
+      showSection('section-login');
+      scrollToTop();
+    });
+  }
+  
+  // Login form handling
+  const loginForm = document.getElementById('login-form');
+  if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(loginForm);
+      
+      // Here you would typically send the data to your server for authentication
+      console.log('Login form submitted:', Object.fromEntries(formData));
+      alert('Login successful! Welcome back.');
+      
+      // Optionally redirect to home page
+      showSection('section-home');
+      setActive(menuHome);
+      scrollToTop();
+    });
+  }
+});

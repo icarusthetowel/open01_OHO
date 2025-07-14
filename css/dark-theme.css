@@ -169,3 +169,101 @@ body.dark-theme,
 .dark-theme .resource-list a:hover {
   color: #81d4fa !important;
 }
+
+/* Dark theme support for signup and login pages */
+.dark-theme .signup-section,
+.dark-theme .login-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.dark-theme .signup-container,
+.dark-theme .login-container {
+  background: #2a2a2a;
+  border-color: #404040;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .signup-header h2,
+.dark-theme .login-header h2 {
+  color: #f0f0f0;
+}
+
+.dark-theme .signup-header p,
+.dark-theme .login-header p {
+  color: #b0b0b0;
+}
+
+.dark-theme .signup-form label,
+.dark-theme .login-form label {
+  color: #e0e0e0;
+}
+
+.dark-theme .signup-form input[type="text"],
+.dark-theme .signup-form input[type="email"],
+.dark-theme .signup-form input[type="password"],
+.dark-theme .login-form input[type="email"],
+.dark-theme .login-form input[type="password"] {
+  background: #3a3a3a;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+.dark-theme .signup-form input[type="text"]:focus,
+.dark-theme .signup-form input[type="email"]:focus,
+.dark-theme .signup-form input[type="password"]:focus,
+.dark-theme .login-form input[type="email"]:focus,
+.dark-theme .login-form input[type="password"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.dark-theme .signup-form input[type="text"]::placeholder,
+.dark-theme .signup-form input[type="email"]::placeholder,
+.dark-theme .signup-form input[type="password"]::placeholder,
+.dark-theme .login-form input[type="email"]::placeholder,
+.dark-theme .login-form input[type="password"]::placeholder {
+  color: #888;
+}
+
+.dark-theme .checkbox-label {
+  color: #c0c0c0;
+}
+
+.dark-theme .remember-me {
+  color: #c0c0c0;
+}
+
+.dark-theme .terms-link,
+.dark-theme .privacy-link,
+.dark-theme .forgot-password-link,
+.dark-theme .login-link,
+.dark-theme .signup-link {
+  color: #4dabf7;
+}
+
+.dark-theme .terms-link:hover,
+.dark-theme .privacy-link:hover,
+.dark-theme .forgot-password-link:hover,
+.dark-theme .login-link:hover,
+.dark-theme .signup-link:hover {
+  color: #74c0fc;
+}
+
+.dark-theme .signup-footer,
+.dark-theme .login-footer {
+  border-top-color: #404040;
+}
+
+.dark-theme .signup-footer p,
+.dark-theme .login-footer p {
+  color: #b0b0b0;
+}
+
+/* About Page Dark Theme */
+.dark-theme .about-section h2 {
+  color: #f0f0f0 !important;
+}
+
+.dark-theme .about-section p {
+  color: #f0f0f0 !important;
+}
