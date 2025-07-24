@@ -256,20 +256,30 @@ collapseBtn.addEventListener('click', () => {
   updateCollapseBtnIcon();
   updateCollapseBtnPosition();
 });
+
 function updateCollapseBtnIcon() {
-  collapseBtn.innerHTML = sidebar.classList.contains('collapsed') ? '&#x25B6;' : '&#x25C0;';
-}
-function updateCollapseBtnPosition() {
   if (sidebar.classList.contains('collapsed')) {
-    collapseBtn.style.left = '-8px'; // 3/4 of the button visible when sidebar is collapsed
+    collapseBtn.innerHTML = '&#x25B6;'; // Right arrow to expand
+    collapseBtn.title = 'Expand sidebar';
   } else {
-    collapseBtn.style.left = '250px';
+    collapseBtn.innerHTML = '&#x25C0;'; // Left arrow to collapse
+    collapseBtn.title = 'Collapse sidebar';
   }
 }
+
+function updateCollapseBtnPosition() {
+  if (sidebar.classList.contains('collapsed')) {
+    collapseBtn.style.left = '16px'; // Stay visible on left edge when collapsed
+  } else {
+    collapseBtn.style.left = '250px'; // Position at sidebar edge when open
+  }
+}
+
 window.addEventListener('resize', () => {
   updateCollapseBtnIcon();
   updateCollapseBtnPosition();
 });
+
 window.addEventListener('load', () => {
   updateCollapseBtnIcon();
   updateCollapseBtnPosition();

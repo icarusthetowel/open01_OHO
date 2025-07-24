@@ -229,6 +229,9 @@
 }
 
 /* Resources Section */
+#section-savedrecipes h2 {
+  padding-top: 60px;
+}
 .resources-container {
   display: grid;
   grid-template-columns: 1fr;

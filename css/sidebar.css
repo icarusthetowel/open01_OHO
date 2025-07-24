@@ -59,8 +59,7 @@
 }
 
 .sidebar-collapse-btn {
-  display: none;
-  position: fixed;
+  position: absolute;
   top: 18px;
   left: 250px;
   width: 32px;
@@ -69,6 +68,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 50%;
   cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
