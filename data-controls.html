@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Controls - Ai-Omni-Hardware</title>
+  
+  <!-- Base CSS for core styling -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  
+  <!-- Data Controls specific styling -->
+  <link rel="stylesheet" href="css/data-controls.css">
+  
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16-alt.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32-alt.png">
+  <link rel="icon" type="image/png" sizes="256x256" href="assets/site-icon-256x256-alt.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/site-icon-512x512-alt.png">
+</head>
+<body class="data-controls-page">
+  <!-- Top Navigation Bar -->
+  <div class="top-nav">
+    <button class="home-btn" onclick="window.location.href='index.html'">
+      <i class="fas fa-home"></i> Home
+    </button>
+    <h1 class="page-title">Data Controls</h1>
+    <button class="theme-toggle-btn" title="Toggle theme" aria-label="Toggle theme">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="8" stroke="#007bff" stroke-width="2" fill="#fff"/>
+        <path d="M11 6v2M11 14v2M6 11H8M14 11h2M8.93 8.93l-1.42-1.42M13.07 13.07l1.42 1.42M8.93 13.07l-1.42 1.42M13.07 8.93l1.42-1.42" stroke="#007bff" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="data-controls-container">
+    
+    <!-- Cache Preferences Section -->
+    <div class="control-section">
+      <h2><i class="fas fa-database"></i> Cache Preferences</h2>
+      <p class="section-description">Manage how we store and use your data locally for improved performance.</p>
+      
+      <div class="control-group">
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="enable-cache" checked>
+            <span class="checkmark"></span>
+            Enable Local Cache
+          </label>
+          <p class="control-description">Allow storing frequently accessed data locally to improve loading times.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="cache-search-history" checked>
+            <span class="checkmark"></span>
+            Cache Search History
+          </label>
+          <p class="control-description">Store your search queries locally for quick access and suggestions.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="cache-preferences">
+            <span class="checkmark"></span>
+            Cache User Preferences
+          </label>
+          <p class="control-description">Remember your settings and preferences across sessions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Collection Section -->
+    <div class="control-section">
+      <h2><i class="fas fa-chart-line"></i> Data Collection & Analytics</h2>
+      <p class="section-description">Control how we collect and use your data to improve our services.</p>
+      
+      <div class="control-group">
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="analytics-collection">
+            <span class="checkmark"></span>
+            Usage Analytics
+          </label>
+          <p class="control-description">Allow collection of anonymous usage data to help us improve the platform.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="error-reporting">
+            <span class="checkmark"></span>
+            Error Reporting
+          </label>
+          <p class="control-description">Automatically send error reports to help us fix issues and bugs.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="performance-monitoring">
+            <span class="checkmark"></span>
+            Performance Monitoring
+          </label>
+          <p class="control-description">Monitor performance metrics to optimize the user experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Model Training Section -->
+    <div class="control-section">
+      <h2><i class="fas fa-brain"></i> AI Model Training & Improvement</h2>
+      <p class="section-description">Choose how your data contributes to improving our AI models and services.</p>
+      
+      <div class="control-group">
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="ai-training-consent">
+            <span class="checkmark"></span>
+            Contribute to AI Model Training
+          </label>
+          <p class="control-description">Allow your anonymized interactions to help train and improve our AI models.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="feature-improvement">
+            <span class="checkmark"></span>
+            Feature Development Data
+          </label>
+          <p class="control-description">Use your usage patterns to develop and improve new features.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="research-participation">
+            <span class="checkmark"></span>
+            Research Participation
+          </label>
+          <p class="control-description">Participate in research studies to advance AI technology (optional surveys may be sent).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy & Security Section -->
+    <div class="control-section">
+      <h2><i class="fas fa-shield-alt"></i> Privacy & Security</h2>
+      <p class="section-description">Advanced privacy and security controls for your data.</p>
+      
+      <div class="control-group">
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="data-encryption" checked disabled>
+            <span class="checkmark"></span>
+            Data Encryption (Always Enabled)
+          </label>
+          <p class="control-description">All your data is encrypted both in transit and at rest for maximum security.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="third-party-sharing">
+            <span class="checkmark"></span>
+            Third-Party Data Sharing
+          </label>
+          <p class="control-description">Allow sharing anonymized data with trusted research partners and service providers.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="marketing-communications">
+            <span class="checkmark"></span>
+            Marketing Communications
+          </label>
+          <p class="control-description">Receive updates about new features, services, and relevant offers.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Retention Section -->
+    <div class="control-section">
+      <h2><i class="fas fa-clock"></i> Data Retention</h2>
+      <p class="section-description">Control how long we keep your data and when it gets deleted.</p>
+      
+      <div class="control-group">
+        <div class="control-item">
+          <label for="retention-period" class="control-label">Data Retention Period</label>
+          <select id="retention-period" class="control-select">
+            <option value="30">30 Days</option>
+            <option value="90">90 Days</option>
+            <option value="180" selected>6 Months</option>
+            <option value="365">1 Year</option>
+            <option value="730">2 Years</option>
+            <option value="indefinite">Indefinite (until account deletion)</option>
+          </select>
+          <p class="control-description">Choose how long to retain your activity data and search history.</p>
+        </div>
+        
+        <div class="control-item">
+          <label class="control-label">
+            <input type="checkbox" id="auto-cleanup" checked>
+            <span class="checkmark"></span>
+            Automatic Data Cleanup
+          </label>
+          <p class="control-description">Automatically delete old data based on your retention preferences.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button type="button" class="btn-secondary" id="reset-defaults">
+        <i class="fas fa-undo"></i> Reset to Defaults
+      </button>
+      <button type="button" class="btn-primary" id="save-preferences">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+    </div>
+  </div>
+
+  <!-- Simple Footer -->
+  <div class="simple-footer">
+    <span>OHO</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/data-controls.js"></script>
+  <script src="js/theme.js"></script>
+</body>
+</html>
